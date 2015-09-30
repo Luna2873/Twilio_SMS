@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Twilio_Send_Message By Sukun</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		{% load bootstrap3 %}
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="header clearfix">
+	        <h3 class="text-muted">Twilio Send Message</h3>
+	        <hr/>
+	    </div>
+
+		<div class="row marketing">
+        	<div class="col-lg-6">
+				<form class="form" method="post" id = "contactform">
+					<div class="form-group">
+				   		{% csrf_token %}
+				    	<div class="col-sm-offset-2 col-sm-8">
+				 
+				    		{% bootstrap_form form %}
+				  	</div>
+				  	<div class="col-sm-offset-2 col-sm-8">
+				 	    {% buttons %}
+					        <button type="submit" class="btn btn-lg btn-success" id="contactbtn">
+					            {% bootstrap_icon "star" %} Submit
+					        </button>
+					    {% endbuttons %}
+					</div>
+				  	<div class="form-group">
+				    	<div class="col-sm-offset-2 col-sm-10">
+				      		{{result}}
+				    	</div>
+				  	</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script>
+		/*function validateText(id){
+			var div = $(id).closest("div");
+			var phoneno = /^\d{10}$/;
+			if(id === '#contactphone'){
+				if(document.getElementById("contactphone").value.match(phoneno)){
+					div.removeClass("has-error");
+					return true;
+				}else{
+					div.addClass("has-error");
+					return false;
+				}
+			}
+			if($(id).val() == null || $(id).val() == ""){
+				div.addClass("has-error");
+				return false;
+			}else{
+				div.removeClass("has-error");
+				
+				return true;
+			}
+		}
+
+		$(document).ready(
+				
+				function()
+				{
+					$("#contactbtn").click(function(){
+						$("form#contactform").submit();
+					});
+				}
+			);
+*/
+	</script>
+	</body>
+	
+</html>
